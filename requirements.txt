@@ -1,0 +1,10 @@
+asgiref==3.4.1
+Django==3.2.13
+django-crispy-forms==1.13.0
+django-easysettings==2.0.1
+django-password-policies==0.4.2
+pip==21.3.1
+pytz==2022.1
+setuptools==44.1.1
+sqlparse==0.4.2
+typing_extensions==4.1.1

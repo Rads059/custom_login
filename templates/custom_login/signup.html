@@ -1,0 +1,41 @@
+
+
+
+
+
+
+
+{% block content %}
+<h2>Sign Up</h2>
+{% load crispy_forms_tags %}
+<form method="post">
+  {% csrf_token %}
+  
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <div class="row">
+      <div class="col-6">
+        {{ form.email|as_crispy_field }}
+      </div>
+  </div>
+  <div class="form-outline mb-4">
+    <div class="row">
+      <div class="col-6">
+        {{ form.name|as_crispy_field }}
+      </div>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <div class="row">
+      <div class="col-6">
+        {{ form.password|as_crispy_field }}
+      </div>
+  </div>
+
+ 
+
+
+  <button type="submit">Sign Up</button>
+</form>
+{% endblock %}

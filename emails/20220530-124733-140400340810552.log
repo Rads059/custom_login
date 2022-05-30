@@ -1,0 +1,21 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: rcdeveloper419@gmail.com
+Date: Mon, 30 May 2022 12:47:33 -0000
+Message-ID: <165391485365.5040.725784840375801091@localhost.localdomain>
+
+
+  To initiate the password reset process for your rcdeveloper419@gmail.com Django Registration/Login App Account,
+  click the link below:
+
+  http://127.0.0.1:8000/custom_login/password-reset-confirm/MQ/b68m79-25f22ed3fdc61d4176ff2e9031a2682d/
+
+  If clicking the link above doesn't work, please copy and paste the URL in a new browser
+  window instead.
+
+
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,41 @@
+
+
+
+
+{% block content %}
+<h2>Log In</h2>
+{% load crispy_forms_tags %}
+<form method="post">
+  {% csrf_token %}
+  
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <div class="row">
+      <div class="col-6">
+        {{ form.email|as_crispy_field }}
+      </div>
+  </div>
+
+  <!-- Password input -->
+  <div class="form-outline mb-4">
+    <div class="row">
+      <div class="col-6">
+        {{ form.password|as_crispy_field }}
+      </div>
+  </div>
+
+  <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+        <label class="form-check-label" for="form1Example3"> Remember me </label>
+      </div>
+
+
+  <button type="submit">Log In</button>
+</form>
+<a href="{% url 'login:password_reset' %}"><i>Reset Password?</i></a>
+
+{% endblock %}

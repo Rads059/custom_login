@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}DashBoard{% endblock %}
+
+{% block content %}
+<h2>Dash Board</h2>
+{% csrf_token %}
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'login:logout' %}">Log Out</a></p>
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login:login' %}">Log In</a> |
+  <a href="{% url 'login:signup' %}">Sign Up</a>
+{% endif %}
+{% if password_change_required %}
+<p class='help'>{% trans "Your password has expired. Please change it using the form below." %}</p>
+{% endif %}
+{% load crispy_forms_tags %}
+<form action="." method="post">{% csrf_token %}
+{{ form|crispy }}{% if next %}
+<input type="hidden" name="next" value="{{ next }}" />{% endif %}
+<input type="submit" value="Submit" />
+</form>
+
+{% endblock %}
