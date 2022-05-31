@@ -55,3 +55,27 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 
 
+# IPL Team WorkOut Model
+
+class Tags(models.Model):
+    name = models.CharField(max_length=250)
+    
+    
+class Exercise(models.Model):
+    name = models.CharField(max_length=250)
+    tags = models.ManyToManyField(Tags)
+
+class Workout_Exercise(models.Model):
+    workout = models.ForeignKey( 'Workout', on_delete=models.CASCADE,)
+    exercise = models.ForeignKey( Exercise, on_delete=models.CASCADE,)
+    reps = models.IntegerField()
+    sets = models.IntegerField()
+    weight = models.DecimalField(max_digits=6, decimal_places=2)
+
+
+class Workout(models.Model):
+    name = models.CharField(max_length=100)
+    body_weight = models.DecimalField(max_digits=6, decimal_places=2)
+    date = models.DateTimeField(auto_now_add=True)
+    exercises = models.ManyToManyField(
+        Exercise, through=Workout_Exercise)
