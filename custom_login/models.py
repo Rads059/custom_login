@@ -77,5 +77,4 @@ class Workout(models.Model):
     name = models.CharField(max_length=100)
     body_weight = models.DecimalField(max_digits=6, decimal_places=2)
     date = models.DateTimeField(auto_now_add=True)
-    exercises = models.ManyToManyField(
-        Exercise, through=Workout_Exercise)
+    exercises = models.ManyToManyField(Exercise, through=Workout_Exercise)
